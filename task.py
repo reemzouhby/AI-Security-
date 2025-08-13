@@ -1,6 +1,7 @@
 import streamlit as st
 import os
-os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"  # Disable GPU for Streamlit Cloud
+
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 st.title("Effect of different Epsilon on accuracy of Mnist Dataset")
 from keras.datasets import mnist
@@ -96,4 +97,5 @@ def comparephotos(x_test_adv):
 
 
 comparephotos(test_adv)
+
 
