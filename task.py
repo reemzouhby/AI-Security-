@@ -1,5 +1,7 @@
 import streamlit as st
-
+import os
+os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 st.title("Effect of different Epsilon on accuracy of Mnist Dataset")
 from keras.datasets import mnist
 import tensorflow as tf
@@ -90,6 +92,7 @@ def comparephotos(x_test_adv):
 
     # Show plot in Streamlit
     st.pyplot(fig)
+
 
 
 comparephotos(test_adv)
